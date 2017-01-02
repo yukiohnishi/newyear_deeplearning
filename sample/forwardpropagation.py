@@ -33,7 +33,7 @@ def forward(X, W1, b1, W2, b2):
     return softmax(A)
 
 
-# num correct / num total
+# classification rate = num correct / num total
 def classification_rate(Y, P):
     n_correct = 0
     n_total = 0
@@ -49,3 +49,4 @@ P = np.argmax(P_Y_given_X, axis=1)
 assert(len(P) == len(Y))
 
 print("Classification rate for randomly chosen weights: %.3f"%(classification_rate(Y, P)))
+print("It's fine if classification rate is nearly 0.33 cuz its weights are randomly chosen and the prediction would also be random.")

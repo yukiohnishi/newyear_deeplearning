@@ -26,8 +26,6 @@ T = np.zeros((N, K))
 for i in range(N):
     T[i, Y[i]] = 1
 
-
-# tensor flow variables are not the same as regular Python variables
 def init_weights(shape):
     return tf.Variable(tf.random_normal(shape, stddev=0.01))
 
@@ -47,15 +45,12 @@ b2 = init_weights([K])
 
 py_x = forward(tfX, W1, b1, W2, b2)
 
-cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(py_x, tfY)) # compute costs
+cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(py_x, tfY))
 
-train_op = tf.train.GradientDescentOptimizer(0.05).minimize(cost) # construct an optimizer
-# input parameter is the learning rate
+train_op = tf.train.GradientDescentOptimizer(0.05).minimize(cost)
 
 predict_op = tf.argmax(py_x, 1)
-# input parameter is the axis on which to choose the max
 
-# just stuff that has to be done
 sess = tf.Session()
 init = tf.initialize_all_variables()
 sess.run(init)
