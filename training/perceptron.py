@@ -15,7 +15,7 @@ class Perceptron(object):
     Attributes
     -----------
     w_ : 1d-array
-        重み係数
+        重み係数. バイアス項の重みも持つ。
     errors_ : list
         epoch毎の分類ミスの回数
 
@@ -48,10 +48,9 @@ class Perceptron(object):
                 X, y = self._shuffle(X, y)
             errors = 0
             for xi, target in zip(X, y):
-                update = self.eta * (target - self.predict(xi))
-                self.w_[1:] += update * xi
-                self.w_[0] += update
-                errors += int(update != 0.0)
+                #TODO code here!!
+
+                
             self.errors_.append(errors)
         return self
 
