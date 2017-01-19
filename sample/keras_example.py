@@ -41,4 +41,4 @@ print(model.summary())
 batch_size = N
 nb_epoch = 1000
 model.compile(loss="categorical_crossentropy", optimizer="sgd", metrics=["accuracy"])
-model.fit(X, y, batch_size=batch_size, nb_epoch=nb_epoch, verbose=1)
+model.fit(X, y, batch_size=batch_size, nb_epoch=nb_epoch, verbose=1, validation_split=0.2)
