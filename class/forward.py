@@ -19,5 +19,5 @@ if __name__ == '__main__':
     print("input x2 is %d" % int(args.x2))
     X = np.array([int(args.x1), int(args.x2)])
     W1 = np.array([[0.5, 0.8],[0.6, 1.1]])
-    W2 = np.array([1, 1])
+    W2 = np.array([1.3, 0.7])
     print("probability is %.3f" % forward(X, W1, W2))
