@@ -48,9 +48,10 @@ class Perceptron(object):
                 X, y = self._shuffle(X, y)
             errors = 0
             for xi, target in zip(X, y):
-                #TODO code here!!
-
-                
+                update = #TODO code here!!
+                self.w_[1:] += update * xi
+                self.w_[0] += update * 1
+                errors += int(update != 0.0)
             self.errors_.append(errors)
         return self
 
