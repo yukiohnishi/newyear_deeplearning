@@ -5,7 +5,7 @@ def split_and_scale(s):
     return np.array(s.split()).astype(np.int) / 255.0
 
 def getData():
-    df = pd.read_csv("../datasets/fer2013.csv")
+    df = pd.read_csv("../datasets/fer2013.csv.zip")
     df["pixels_separated"] = df.pixels.apply(lambda x:split_and_scale(x))
     # 偏りデータの対処
     df_1 = df[df.emotion == 1]
